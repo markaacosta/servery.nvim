@@ -100,7 +100,7 @@ cfg_defaults = function()
 	---@class servery.Cfg
 	local out = {
 		---@type string[] | fun(): string[]
-		dirs = function() return vim.fs.glob("~/*", true, true) end,
+		dirs = function() return vim.fn.glob("~/*", true, true) end,
 		---@type fun(): string[]
 		servers = function()
 			return vim.tbl_filter(
