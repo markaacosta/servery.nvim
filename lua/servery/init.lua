@@ -48,7 +48,7 @@ local setup_cmds = function()
 		if count or arg then
 			local session = get_session({ count = count, name = arg })
 			if session then
-				session:switch()
+				session:switch(bang)
 			elseif arg then
 				local stat = vim.uv.fs_stat(vim.fs.normalize(arg))
 				if stat and stat.type == "directory" then
